@@ -1,0 +1,59 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f6f9;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd 0%, #004494 100%);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card .card-body h6 {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.stat-card .card-body h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.card {
+    border-radius: 0.5rem;
+}
+
+.table th {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.list-group-item-primary {
+    border-left: 4px solid #0d6efd;
+}
+
+@media (max-width: 768px) {
+    .stat-card .card-body h2 {
+        font-size: 1.5rem;
+    }
+}

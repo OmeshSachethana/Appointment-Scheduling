@@ -1,0 +1,11 @@
+# Prevent directory listing
+Options -Indexes
+
+# Protect uploads from script execution
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+<FilesMatch "\.(php|phtml|php3|php4|php5|phps)$">
+    Require all denied
+</FilesMatch>
