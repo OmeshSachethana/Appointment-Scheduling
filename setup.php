@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSSMS Setup</title>
+    <link rel="icon" href="<?= BASE_URL . LOGO_PATH ?>" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -60,6 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <div class="auth-brand mb-4">
+                <div class="auth-logo-wrap" aria-hidden="true">
+                    <img src="<?= BASE_URL . LOGO_PATH ?>" alt="" class="auth-logo">
+                </div>
+                <div class="auth-brand-title">DSSMS Minipe</div>
+            </div>
             <div class="card setup-card">
                 <div class="card-header auth-card-header py-3">
                     <h4 class="mb-0"><i class="bi bi-database-gear me-2"></i>DSSMS Minipe – Database Setup</h4>

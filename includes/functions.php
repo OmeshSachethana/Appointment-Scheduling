@@ -161,6 +161,11 @@ function basePath(string $path = ''): string
     return BASE_URL . ltrim($path, '/');
 }
 
+function logoPath(): string
+{
+    return basePath(LOGO_PATH);
+}
+
 function langUrl(string $lang): string
 {
     $uri = $_SERVER['REQUEST_URI'] ?? '';
