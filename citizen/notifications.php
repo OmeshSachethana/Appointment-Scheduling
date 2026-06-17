@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../includes/auth.php';
+require_once __DIR__ . '/../includes/auth.php';
 requireLogin();
 
 $pdo = getDBConnection();
@@ -22,7 +22,7 @@ $stmt->execute([$userId]);
 $notifications = $stmt->fetchAll();
 
 $pageTitle = __('notifications');
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -35,9 +35,12 @@ include __DIR__ . '/../../includes/header.php';
 <div class="card shadow-sm border-0">
     <div class="list-group list-group-flush">
         <?php if (empty($notifications)): ?>
-            <div class="list-group-item text-center text-muted py-5"><?= e(__('no_records')) ?></div>
+            <div class="empty-state">
+                <i class="bi bi-bell-slash"></i>
+                <?= e(__('no_records')) ?>
+            </div>
         <?php else: foreach ($notifications as $n): ?>
-            <div class="list-group-item <?= $n['is_read'] ? '' : 'list-group-item-primary' ?>">
+            <div class="list-group-item notification-item <?= $n['is_read'] ? '' : 'list-group-item-primary' ?>">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="mb-1"><?= e($n['message']) ?></p>
@@ -54,4 +57,4 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

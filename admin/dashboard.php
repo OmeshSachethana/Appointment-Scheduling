@@ -38,25 +38,25 @@ include __DIR__ . '/../includes/header.php';
 
 <div class="row g-4 mb-4">
     <div class="col-md-3 col-6">
-        <div class="card stat-card bg-primary text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('total_citizens')) ?></h6><h2><?= $stats['citizens'] ?></h2></div></div>
+        <div class="card stat-card stat-card--primary shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-people"></i></div><div class="stat-label"><?= e(__('total_citizens')) ?></div><div class="stat-value"><?= $stats['citizens'] ?></div></div></div>
     </div>
     <div class="col-md-3 col-6">
-        <div class="card stat-card bg-info text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('total_appointments')) ?></h6><h2><?= $stats['appointments'] ?></h2></div></div>
+        <div class="card stat-card stat-card--info shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-calendar3"></i></div><div class="stat-label"><?= e(__('total_appointments')) ?></div><div class="stat-value"><?= $stats['appointments'] ?></div></div></div>
     </div>
     <div class="col-md-3 col-6">
-        <div class="card stat-card bg-warning text-dark border-0 shadow-sm"><div class="card-body"><h6><?= e(__('pending_appointments')) ?></h6><h2><?= $stats['pending_appt'] ?></h2></div></div>
+        <div class="card stat-card stat-card--warning shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-hourglass"></i></div><div class="stat-label"><?= e(__('pending_appointments')) ?></div><div class="stat-value"><?= $stats['pending_appt'] ?></div></div></div>
     </div>
     <div class="col-md-3 col-6">
-        <div class="card stat-card bg-success text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('approved_appointments')) ?></h6><h2><?= $stats['approved_appt'] ?></h2></div></div>
+        <div class="card stat-card stat-card--success shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-check-circle"></i></div><div class="stat-label"><?= e(__('approved_appointments')) ?></div><div class="stat-value"><?= $stats['approved_appt'] ?></div></div></div>
     </div>
     <div class="col-md-4 col-6">
-        <div class="card stat-card bg-secondary text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('total_requests')) ?></h6><h2><?= $stats['requests'] ?></h2></div></div>
+        <div class="card stat-card stat-card--secondary shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-inbox"></i></div><div class="stat-label"><?= e(__('total_requests')) ?></div><div class="stat-value"><?= $stats['requests'] ?></div></div></div>
     </div>
     <div class="col-md-4 col-6">
-        <div class="card stat-card bg-danger text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('pending_requests')) ?></h6><h2><?= $stats['pending_req'] ?></h2></div></div>
+        <div class="card stat-card stat-card--danger shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-exclamation-circle"></i></div><div class="stat-label"><?= e(__('pending_requests')) ?></div><div class="stat-value"><?= $stats['pending_req'] ?></div></div></div>
     </div>
     <div class="col-md-4 col-6">
-        <div class="card stat-card bg-dark text-white border-0 shadow-sm"><div class="card-body"><h6><?= e(__('completed_requests')) ?></h6><h2><?= $stats['completed_req'] ?></h2></div></div>
+        <div class="card stat-card stat-card--dark shadow-sm"><div class="card-body"><div class="stat-icon"><i class="bi bi-patch-check"></i></div><div class="stat-label"><?= e(__('completed_requests')) ?></div><div class="stat-value"><?= $stats['completed_req'] ?></div></div></div>
     </div>
 </div>
 
@@ -77,7 +77,7 @@ include __DIR__ . '/../includes/header.php';
 
 <div class="card shadow-sm border-0 mb-4">
     <div class="card-header"><?= e(__('quick_actions')) ?></div>
-    <div class="card-body d-flex flex-wrap gap-2">
+    <div class="card-body quick-actions d-flex flex-wrap gap-2">
         <a href="<?= basePath('admin/users.php') ?>" class="btn btn-outline-primary"><i class="bi bi-people"></i> <?= e(__('manage_users')) ?></a>
         <a href="<?= basePath('admin/appointments.php') ?>" class="btn btn-outline-info"><i class="bi bi-calendar"></i> <?= e(__('manage_appointments')) ?></a>
         <a href="<?= basePath('admin/service-requests.php') ?>" class="btn btn-outline-success"><i class="bi bi-file-text"></i> <?= e(__('manage_requests')) ?></a>
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'bar',
         data: {
             labels: <?= json_encode(array_column($monthlyData, 'month')) ?>,
-            datasets: [{ label: '<?= e(__('appointments')) ?>', data: <?= json_encode(array_map('intval', array_column($monthlyData, 'total'))) ?>, backgroundColor: '#0d6efd' }]
+            datasets: [{ label: '<?= e(__('appointments')) ?>', data: <?= json_encode(array_map('intval', array_column($monthlyData, 'total'))) ?>, backgroundColor: '#0d9488', borderRadius: 6 }]
         },
         options: { responsive: true, plugins: { legend: { display: false } } }
     });
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'doughnut',
         data: {
             labels: <?= json_encode(array_map(fn($r) => serviceLabel($r['request_type']), $requestStats)) ?>,
-            datasets: [{ data: <?= json_encode(array_map('intval', array_column($requestStats, 'total'))) ?>, backgroundColor: ['#0d6efd','#198754','#ffc107','#dc3545','#6f42c1','#20c997','#fd7e14','#0dcaf0','#6610f2','#6c757d'] }]
+            datasets: [{ data: <?= json_encode(array_map('intval', array_column($requestStats, 'total'))) ?>, backgroundColor: ['#0f2744','#0d9488','#2563eb','#d97706','#dc2626','#7c3aed','#0891b2','#059669','#ca8a04','#64748b'] }]
         },
         options: { responsive: true }
     });

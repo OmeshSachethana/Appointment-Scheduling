@@ -61,7 +61,7 @@ include __DIR__ . '/../includes/header.php';
 
 <h2 class="mb-4"><?= e(__('manage_requests')) ?></h2>
 
-<div class="mb-3">
+<div class="mb-3 filter-pills">
     <a href="?" class="btn btn-sm btn-outline-secondary"><?= e(__('all_requests')) ?></a>
     <?php foreach (REQUEST_STATUSES as $s): ?>
         <a href="?status=<?= $s ?>" class="btn btn-sm btn-outline-primary <?= $filter === $s ? 'active' : '' ?>"><?= e(__('status_' . $s)) ?></a>

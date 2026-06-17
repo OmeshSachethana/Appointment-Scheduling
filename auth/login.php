@@ -33,33 +33,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<div class="row justify-content-center">
-    <div class="col-md-5">
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0"><i class="bi bi-person"></i> <?= e(__('citizen_login')) ?></h4>
-            </div>
-            <div class="card-body p-4">
-                <?php if ($error): ?>
-                    <div class="alert alert-danger"><?= e($error) ?></div>
-                <?php endif; ?>
-                <form method="POST">
-                    <div class="mb-3">
-                        <label class="form-label"><?= e(__('email')) ?></label>
-                        <input type="email" name="email" class="form-control" required value="<?= e($_POST['email'] ?? '') ?>">
+<div class="auth-wrapper">
+    <div class="card auth-card">
+        <div class="card-header auth-card-header py-3">
+            <h4 class="mb-0"><i class="bi bi-person me-2"></i><?= e(__('citizen_login')) ?></h4>
+        </div>
+        <div class="card-body p-4">
+            <?php if ($error): ?>
+                <div class="alert alert-danger mb-3"><i class="bi bi-exclamation-circle me-1"></i><?= e($error) ?></div>
+            <?php endif; ?>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label"><?= e(__('email')) ?></label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light"><i class="bi bi-envelope text-muted"></i></span>
+                        <input type="email" name="email" class="form-control" required value="<?= e($_POST['email'] ?? '') ?>" placeholder="you@example.com">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label"><?= e(__('password')) ?></label>
-                        <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label"><?= e(__('password')) ?></label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light"><i class="bi bi-lock text-muted"></i></span>
+                        <input type="password" name="password" class="form-control" required placeholder="••••••••">
                     </div>
-                    <button type="submit" class="btn btn-primary w-100"><?= e(__('login')) ?></button>
-                </form>
-                <p class="mt-3 mb-0 text-center">
-                    <?= e(__('no_account')) ?> <a href="<?= basePath('auth/register.php') ?>"><?= e(__('register_here')) ?></a>
-                </p>
-                <p class="mt-2 mb-0 text-center small">
-                    <a href="<?= basePath('auth/admin-login.php') ?>"><?= e(__('admin_login')) ?></a>
-                </p>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="bi bi-box-arrow-in-right me-1"></i><?= e(__('login')) ?>
+                </button>
+            </form>
+            <div class="auth-links mt-4 text-center">
+                <p class="mb-1"><?= e(__('no_account')) ?> <a href="<?= basePath('auth/register.php') ?>"><?= e(__('register_here')) ?></a></p>
+                <p class="mb-0 small text-muted"><a href="<?= basePath('auth/admin-login.php') ?>"><?= e(__('admin_login')) ?></a></p>
             </div>
         </div>
     </div>

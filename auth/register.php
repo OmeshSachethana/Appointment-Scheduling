@@ -50,13 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include __DIR__ . '/../includes/header.php';
 ?>
 
-<div class="row justify-content-center">
-    <div class="col-lg-8">
-        <div class="card shadow-sm border-0">
-            <div class="card-header bg-success text-white">
-                <h4 class="mb-0"><i class="bi bi-person-plus"></i> <?= e(__('register_title')) ?></h4>
-            </div>
-            <div class="card-body p-4">
+<div class="auth-wrapper">
+    <div class="card auth-card auth-card--wide">
+        <div class="card-header bg-success text-white py-3">
+            <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i><?= e(__('register_title')) ?></h4>
+        </div>
+        <div class="card-body p-4">
                 <?php foreach ($errors as $err): ?>
                     <div class="alert alert-danger"><?= e($err) ?></div>
                 <?php endforeach; ?>
@@ -98,12 +97,11 @@ include __DIR__ . '/../includes/header.php';
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success"><?= e(__('register')) ?></button>
+                    <button type="submit" class="btn btn-success px-4"><i class="bi bi-check-lg me-1"></i><?= e(__('register')) ?></button>
                     <a href="<?= basePath('auth/login.php') ?>" class="btn btn-outline-secondary"><?= e(__('login_here')) ?></a>
                 </form>
             </div>
         </div>
-    </div>
 </div>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

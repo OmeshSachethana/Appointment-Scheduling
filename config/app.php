@@ -1,7 +1,7 @@
 <?php
 define('APP_NAME', 'Divisional Secretariat Service Management System – Minipe');
 define('APP_SHORT', 'DSSMS Minipe');
-define('BASE_URL', '/');
+define('BASE_URL', '/appointment-scheduling/');
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('UPLOAD_URL', BASE_URL . 'uploads/');
 define('MAX_UPLOAD_SIZE', 5 * 1024 * 1024); // 5MB
