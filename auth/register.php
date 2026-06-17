@@ -51,6 +51,7 @@ include __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="auth-wrapper">
+    <?php include __DIR__ . '/../includes/auth-brand.php'; ?>
     <div class="card auth-card auth-card--wide">
         <div class="card-header bg-success text-white py-3">
             <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i><?= e(__('register_title')) ?></h4>

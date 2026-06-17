@@ -34,6 +34,7 @@ include __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="auth-wrapper">
+    <?php include __DIR__ . '/../includes/auth-brand.php'; ?>
     <div class="card auth-card">
         <div class="card-header auth-card-header py-3">
             <h4 class="mb-0"><i class="bi bi-person me-2"></i><?= e(__('citizen_login')) ?></h4>

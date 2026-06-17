@@ -7,8 +7,11 @@ include __DIR__ . '/includes/header.php';
 
 <section class="hero-section text-white text-center py-5 mb-5">
     <div class="container py-5">
+        <div class="hero-logo-wrap mx-auto mb-4" aria-hidden="true">
+            <img src="<?= logoPath() ?>" alt="<?= e(__('app_short')) ?>" class="hero-logo">
+        </div>
         <div class="hero-badge mx-auto">
-            <i class="bi bi-shield-check"></i> <?= e(__('app_short')) ?>
+            <?= e(__('app_short')) ?>
         </div>
         <h1 class="display-5 fw-bold mb-3"><?= e(__('app_name')) ?></h1>
         <p class="lead col-lg-8 mx-auto mb-0"><?= e(__('welcome_message')) ?></p>

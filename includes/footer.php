@@ -3,9 +3,14 @@
 <footer class="app-footer">
     <div class="container">
         <div class="row align-items-start g-4">
-            <div class="col-md-8">
-                <h6><i class="bi bi-building footer-icon"></i><?= e(__('app_short')) ?></h6>
-                <p class="mb-0 small"><?= e(__('footer_text')) ?></p>
+            <div class="col-md-8 d-flex align-items-start gap-3">
+                <span class="footer-logo-wrap" aria-hidden="true">
+                    <img src="<?= logoPath() ?>" alt="<?= e(__('app_short')) ?>" class="footer-logo">
+                </span>
+                <div>
+                    <h6><?= e(__('app_short')) ?></h6>
+                    <p class="mb-0 small"><?= e(__('footer_text')) ?></p>
+                </div>
             </div>
             <div class="col-md-4 text-md-end">
                 <p class="mb-0 small"><i class="bi bi-geo-alt footer-icon"></i><?= e(__('office_address')) ?></p>

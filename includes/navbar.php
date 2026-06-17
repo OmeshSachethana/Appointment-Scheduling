@@ -5,8 +5,13 @@ $unreadCount = isLoggedIn() ? getUnreadNotificationCount($pdo, $_SESSION['user_i
 <nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
     <div class="container">
         <a class="navbar-brand" href="<?= basePath('index.php') ?>">
-            <span class="brand-icon"><i class="bi bi-building"></i></span>
-            <span><?= e(__('app_short')) ?></span>
+            <span class="brand-logo-wrap" aria-hidden="true">
+                <img src="<?= logoPath() ?>" alt="<?= e(__('app_short')) ?>" class="brand-logo">
+            </span>
+            <span class="brand-text">
+                <span class="brand-title"><?= e(__('app_short')) ?></span>
+                <span class="brand-subtitle d-none d-md-inline"><?= e(__('citizen_portal')) ?></span>
+            </span>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
