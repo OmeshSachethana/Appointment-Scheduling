@@ -36,35 +36,39 @@ include __DIR__ . '/../includes/header.php';
 <h2 class="mb-4"><?= e(__('welcome')) ?>, <?= e($_SESSION['full_name']) ?>!</h2>
 
 <div class="row g-4 mb-4">
-    <div class="col-md-3">
-        <div class="card stat-card bg-primary text-white border-0 shadow-sm">
+    <div class="col-md-3 col-6">
+        <div class="card stat-card stat-card--primary shadow-sm">
             <div class="card-body">
-                <h6><?= e(__('appointments')) ?></h6>
-                <h2><?= $totalAppointments ?></h2>
+                <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+                <div class="stat-label"><?= e(__('appointments')) ?></div>
+                <div class="stat-value"><?= $totalAppointments ?></div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card stat-card bg-warning text-dark border-0 shadow-sm">
+    <div class="col-md-3 col-6">
+        <div class="card stat-card stat-card--warning shadow-sm">
             <div class="card-body">
-                <h6><?= e(__('pending_appointments')) ?></h6>
-                <h2><?= $pendingAppointments ?></h2>
+                <div class="stat-icon"><i class="bi bi-hourglass-split"></i></div>
+                <div class="stat-label"><?= e(__('pending_appointments')) ?></div>
+                <div class="stat-value"><?= $pendingAppointments ?></div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card stat-card bg-success text-white border-0 shadow-sm">
+    <div class="col-md-3 col-6">
+        <div class="card stat-card stat-card--success shadow-sm">
             <div class="card-body">
-                <h6><?= e(__('service_requests')) ?></h6>
-                <h2><?= $totalRequests ?></h2>
+                <div class="stat-icon"><i class="bi bi-file-earmark-text"></i></div>
+                <div class="stat-label"><?= e(__('service_requests')) ?></div>
+                <div class="stat-value"><?= $totalRequests ?></div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card stat-card bg-info text-white border-0 shadow-sm">
+    <div class="col-md-3 col-6">
+        <div class="card stat-card stat-card--info shadow-sm">
             <div class="card-body">
-                <h6><?= e(__('pending_requests')) ?></h6>
-                <h2><?= $activeRequests ?></h2>
+                <div class="stat-icon"><i class="bi bi-clock-history"></i></div>
+                <div class="stat-label"><?= e(__('pending_requests')) ?></div>
+                <div class="stat-value"><?= $activeRequests ?></div>
             </div>
         </div>
     </div>

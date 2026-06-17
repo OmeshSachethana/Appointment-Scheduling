@@ -35,9 +35,12 @@ include __DIR__ . '/../includes/header.php';
 <div class="card shadow-sm border-0">
     <div class="list-group list-group-flush">
         <?php if (empty($notifications)): ?>
-            <div class="list-group-item text-center text-muted py-5"><?= e(__('no_records')) ?></div>
+            <div class="empty-state">
+                <i class="bi bi-bell-slash"></i>
+                <?= e(__('no_records')) ?>
+            </div>
         <?php else: foreach ($notifications as $n): ?>
-            <div class="list-group-item <?= $n['is_read'] ? '' : 'list-group-item-primary' ?>">
+            <div class="list-group-item notification-item <?= $n['is_read'] ? '' : 'list-group-item-primary' ?>">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <p class="mb-1"><?= e($n['message']) ?></p>
