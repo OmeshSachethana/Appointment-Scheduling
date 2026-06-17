@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../../includes/auth.php';
+require_once __DIR__ . '/../../includes/auth.php';
 requireCitizen();
 
 $pdo = getDBConnection();
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = __('create_appointment');
-include __DIR__ . '/../../../includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 ?>
 
 <div class="row justify-content-center">
@@ -67,4 +67,4 @@ include __DIR__ . '/../../../includes/header.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/../../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>

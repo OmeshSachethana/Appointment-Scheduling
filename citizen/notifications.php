@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../includes/auth.php';
+require_once __DIR__ . '/../includes/auth.php';
 requireLogin();
 
 $pdo = getDBConnection();
@@ -22,7 +22,7 @@ $stmt->execute([$userId]);
 $notifications = $stmt->fetchAll();
 
 $pageTitle = __('notifications');
-include __DIR__ . '/../../includes/header.php';
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -54,4 +54,4 @@ include __DIR__ . '/../../includes/header.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
